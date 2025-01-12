@@ -1,7 +1,7 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using System.Net.Sockets;
-
+using UdpEsp8266App.Services;
 namespace UdpEsp8266App;
 
 public static class MauiProgram
@@ -23,6 +23,9 @@ public static class MauiProgram
         });
         
         builder.Services.AddSingleton<TcpPage>();
+        builder.Services.AddTransient<SwitchControlPage>();
+        builder.Services.AddSingleton<MqttService>();
+
 
         return builder.Build();
     }

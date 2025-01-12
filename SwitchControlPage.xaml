@@ -1,0 +1,41 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UdpEsp8266App.SwitchControlPage"
+             Title="Switch Control">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+
+            <Label Text="Select Communication Type:" FontAttributes="Bold" />
+            <Picker Title="Select Communication Type"
+                    ItemsSource="{Binding CommunicationTypes}"
+                    SelectedItem="{Binding SelectedCommunicationType}" />
+
+            <Label Text="MQTT Broker URL:" FontAttributes="Bold" />
+            <Entry Text="{Binding MqttBrokerUrl}" Placeholder="Enter Broker URL" />
+
+            <Label Text="MQTT Topic:" FontAttributes="Bold" />
+            <Entry Text="{Binding MqttTopic}" Placeholder="Enter MQTT Topic" />
+
+            <Label Text="MQTT QoS:" FontAttributes="Bold" />
+            <Picker Title="Select QoS"
+                    ItemsSource="{Binding QosOptions}"
+                    SelectedItem="{Binding MqttQos}" />
+
+            <Button Text="Connect to MQTT" Clicked="OnConnectToMqttClicked" />
+
+            <Label Text="Switches:" FontAttributes="Bold" />
+            <CollectionView ItemsSource="{Binding Switches}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="{Binding Label}" VerticalOptions="Center" />
+                            <Switch IsToggled="{Binding State, Mode=TwoWay}" Toggled="OnSwitchToggled" />
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

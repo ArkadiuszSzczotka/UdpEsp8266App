@@ -14,4 +14,8 @@
         Title="TCP Communicator"
         ContentTemplate="{DataTemplate local:TcpPage}"
         Route="TcpPage" />
+    <ShellContent
+        Title="Switch Control"
+        ContentTemplate="{DataTemplate local:SwitchControlPage}"
+        Route="SwitchControlPage" />
 </Shell>
