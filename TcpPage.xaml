@@ -1,0 +1,47 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UdpEsp8266App.TcpPage"
+             Title="TCP Communicator">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <!-- Input Fields -->
+        <Entry x:Name="ClientIp" Placeholder="Client IP" Keyboard="Plain" />
+        <Entry x:Name="ServerPortEntry" Placeholder="Port" Keyboard="Numeric" />
+
+        <Grid HorizontalOptions="FillAndExpand" ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Text="Start Server" Clicked="OnStartServerClicked" HorizontalOptions="FillAndExpand" />
+            <Button Grid.Column="1" Text="Stop Server" Clicked="OnStopServerClicked" HorizontalOptions="FillAndExpand" />
+            <Button Grid.Column="2" Text="CLS" Clicked="OnClearScreenClicked" HorizontalOptions="FillAndExpand" />
+        </Grid>
+
+
+        <!-- Send Message Section with Grid layout -->
+        <Grid ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Entry x:Name="ServerMessageEntry" Placeholder="Enter message" Grid.Column="0" />
+            <Button Text="Send" Clicked="OnSendMessageClicked" Grid.Column="1" WidthRequest="80" />
+        </Grid>
+
+        
+        <!-- Received Messages -->
+        <Label Text="Received Messages:" FontAttributes="Bold" />
+
+        <!-- Terminal-like message display -->
+        <Label x:Name="Line1" VerticalOptions="Start" />
+        <Label x:Name="Line2" VerticalOptions="Start" />
+        <Label x:Name="Line3" VerticalOptions="Start" />
+        <Label x:Name="Line4" VerticalOptions="Start" />
+        <Label x:Name="Line5" VerticalOptions="Start" />
+        <Label x:Name="Line6" VerticalOptions="Start" />
+
+    </VerticalStackLayout>
+</ContentPage>
