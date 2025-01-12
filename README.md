@@ -20,6 +20,9 @@ The **Communicator UDP TCP MQTT** is a modern .NET MAUI application designed for
 ---
 
 ## **Screenshots**
+![screenshot2](https://github.com/ArkadiuszSzczotka/UdpEsp8266App/blob/main/Screenshots/Screenshot2.jpg?raw=true)
+![screenshot6](https://github.com/ArkadiuszSzczotka/UdpEsp8266App/blob/main/Screenshots/Screenshot6.jpg?raw=true)
+
 
 
 ---
