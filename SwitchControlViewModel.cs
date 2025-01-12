@@ -22,7 +22,7 @@ public partial class SwitchControlViewModel : ObservableObject
     private string selectedCommunicationType = "TCP"; // Default to TCP
 
     [ObservableProperty]
-    private string mqttBrokerUrl = "test.mosquitto.org";
+    private string mqttBrokerUrl = "broker.hivemq.com";
 
     [ObservableProperty]
     private string mqttTopic = "esp8266/switch";
@@ -55,9 +55,8 @@ public partial class SwitchControlViewModel : ObservableObject
                     .WithTcpServer(MqttBrokerUrl)
                     .Build();
 
-                await _mqttClient.ConnectAsync(options);
+                var connectResult = await _mqttClient.ConnectAsync(options);
             }
-
             return "Connected to MQTT Broker successfully.";
         }
         catch (Exception ex)
@@ -120,7 +119,7 @@ public partial class SwitchControlViewModel : ObservableObject
                 .WithQualityOfServiceLevel((MQTTnet.Protocol.MqttQualityOfServiceLevel)MqttQos)
                 .Build();
 
-            await _mqttClient.PublishAsync(applicationMessage);
+            await _mqttClient!.PublishAsync(applicationMessage);
             return $"Message sent via MQTT: {message}";
         }
         catch (Exception ex)
