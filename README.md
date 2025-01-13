@@ -117,7 +117,7 @@ The app sends the state (ON or OFF) via the selected communication type.
 
 ### **Future Enhancements**
     🛠️ Add support for WebSocket communication.
-    📈 Expand switch count to dynamically support up to 12 switches.
+    📈 Expand switch count up.
     🔒 Add secure communication:
       - TLS for MQTT.
       - Authentication for TCP.
@@ -126,7 +126,7 @@ The app sends the state (ON or OFF) via the selected communication type.
 
 ### **Contributing**
 
-## **Contributions are welcome! To contribute:*
+## **Contributions are welcome! To contribute:**
 
 1. Fork the repository.
 2. Create new branch:
